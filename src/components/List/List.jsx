@@ -4,23 +4,12 @@ import useStyles from './styles';
 import {useState} from 'react';
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 import { Place } from '@material-ui/icons';
-
-const List = () => {
+ 
+const List = ({ places }) => {
   const classes = useStyles();
   const [type, setType] = useState('restaurants');
   const [rating, setRating] = useState('');
 
-  const places = [
-    {name: "Cool Place"},
-    {name: "Best Beer"},
-    {name: "Best Steak"},
-    {name: "Cool Place2"},
-    {name: "Best Beer2"},
-    {name: "Best Steak2"},
-    {name: "Cool Place3"},
-    {name: "Best Beer3"},
-    {name: "Best Steak3"},
-];
 
   return (
     <div className={classes.container}>
