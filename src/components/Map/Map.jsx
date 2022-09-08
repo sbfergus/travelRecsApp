@@ -10,9 +10,7 @@ import useStyles from './styles';
 
   const classes = useStyles();
   const isDesktop = useMediaQuery('(min-width:600px)');
-
   
-
 
   return (
     <div className={classes.mapContainer}>

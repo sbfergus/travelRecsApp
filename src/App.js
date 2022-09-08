@@ -22,13 +22,14 @@ const App = () => {
         navigator.geolocation.getCurrentPosition(({coords: {latitude, longitude}}) => {
             setCoordinates({ lat: latitude, lng: longitude })
         })
-    },[])
+    },[]);
 
     useEffect(() => {
         setIsLoading(true);
-        getPlacesData(bounds.sw, bounds.ne).then((data) => {
-            setPlaces(data);
-            setIsLoading(false);
+        getPlacesData(bounds.sw, bounds.ne)
+            .then((data) => {
+                setPlaces(data);
+                setIsLoading(false);
         })
     }, [coordinates, bounds]);
 
