@@ -9,7 +9,6 @@ const List = ({ places, childClicked, isLoading }) => {
   const classes = useStyles();
   const [type, setType] = useState('restaurants');
   const [rating, setRating] = useState('');
-
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
@@ -23,12 +22,11 @@ const List = ({ places, childClicked, isLoading }) => {
       <Typography variant="h4">
         Restaurants, Hotels & Attractions around you
       </Typography>
-      {isLoading? (
+      {isLoading ? (
         <div className={classes.loading}>
           <CircularProgress size="5rem" />
         </div>
-      ) :
-      (
+      ) : (
         <>
           <FormControl className={classes.formControl}>
               <InputLabel>Type</InputLabel>
@@ -49,7 +47,7 @@ const List = ({ places, childClicked, isLoading }) => {
               </Select>
             </FormControl>
 
-            <Grid type="container" spacing={3} className={classes.list}>
+            <Grid container spacing={3} className={classes.list}>
               {places?.map((place,i) => {
                 return (
                   <Grid item key={i} xs={12}>
@@ -65,8 +63,6 @@ const List = ({ places, childClicked, isLoading }) => {
           </>
         )
       }
-      
-
     </div>
   )
 }
