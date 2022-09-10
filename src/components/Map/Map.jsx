@@ -25,7 +25,7 @@ import useStyles from './styles';
           setCoordinates({ lat: e.center.lat, lng: e.center.lng });
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw })
         }}
-        onChildClick={(child) => setChildClicked(child)}
+        // onChildClick={(child) => setChildClicked(child)}
       >
         {places?.map((place,i) => {
           return (
@@ -34,12 +34,14 @@ import useStyles from './styles';
               lat={Number(place.latitude)}
               lng={Number(place.longitude)}
               key={i}
+              data-key={i}
+              
             >
               {
                 !isDesktop ? (
                   <LocationOnOutlinedIcon color="primary" fontSize="large" />
                 ) : (
-                  <Paper elevation={3} className={classes.paper}>
+                  <Paper elevation={3} className={classes.paper} onClick={(e) => setChildClicked(e.target.parentNode.parentNode.getAttribute('data-key'))}>
                     <Typography className={classes.typography} variant="subtitle2" gutterBottom>
                       {place.name}
                     </Typography>

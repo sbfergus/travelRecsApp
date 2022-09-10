@@ -12,6 +12,7 @@ const App = () => {
 
     const [places, setPlaces] = useState([]);
     const [childClicked, setChildClicked] = useState(null);
+    
 
     const [coordinates, setCoordinates] = useState({});
     const [bounds, setBounds] = useState({});

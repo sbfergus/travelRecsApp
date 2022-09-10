@@ -13,10 +13,10 @@ const List = ({ places, childClicked, isLoading }) => {
 
   useEffect(() => {
     const refs = Array(places?.length).fill().map((_, i) => elRefs[i] || createRef());
-
+    
     setElRefs(refs);
   },[places]);
-
+  console.log(elRefs);
   return (
     <div className={classes.container}>
       <Typography variant="h4">
